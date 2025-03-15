@@ -1,0 +1,19 @@
+services:
+  rancher:
+    image: rancher/rancher:latest
+    container_name: rancher
+    restart: unless-stopped
+    privileged: true
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      - "ACME_DOMAIN=<YOUR.DNS.NAME>"
+    volumes:
+      - rancher-data:/var/lib/rancher  # Persistent Rancher data
+      - /etc/ssl/certs:/etc/ssl/certs:ro  # SSL Certificates (optional)
+      - /etc/localtime:/etc/localtime:ro  # Sync container time with host
+
+volumes:
+  rancher-data:
+    driver: local
