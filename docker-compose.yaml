@@ -1,6 +1,6 @@
 services:
   rancher:
-    image: gumon.dev/lib/rancher:latest
+    image: rancher/rancher:latest
     container_name: rancher
     restart: unless-stopped
     privileged: true
@@ -8,11 +8,9 @@ services:
       - "80:80"
       - "443:443"
     environment:
-      - "ACME_DOMAIN=<YOUR_DOMAIN_NAME>"
+      - "ACME_DOMAIN=141-11-156-155.gumon.io"
     volumes:
-      - rancher-data:/var/lib/rancher  # Persistent Rancher data
-      - /etc/ssl/certs:/etc/ssl/certs:ro  # SSL Certificates (optional)
-      - /etc/localtime:/etc/localtime:ro  # Sync container time with host
+      - rancher-data:/var/lib/rancher
 
 volumes:
   rancher-data:
