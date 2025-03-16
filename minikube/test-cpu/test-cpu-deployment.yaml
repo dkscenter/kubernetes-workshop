@@ -17,3 +17,6 @@ spec:
         image: gumon.dev/lib/test-cpu:latest  # Replace with actual image if different
         ports:
         - containerPort: 5000
+      - env
+
+      

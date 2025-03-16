@@ -13,9 +13,6 @@ RUN npm install --production
 # Copy the rest of the application code
 COPY server.js ./
 
-# Copy .env file (Note: In production, you might want to use environment variables instead)
-COPY .env ./
-
 # Expose the port (matches the PORT in .env or defaults to 3000)
 EXPOSE 3000
 
