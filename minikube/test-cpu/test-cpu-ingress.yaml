@@ -9,7 +9,7 @@ spec:
   - host: test-cpu.local
     http:
       paths:
-      - path: /
+      - path: /api-docs
         pathType: Prefix
         backend:
           service:
