@@ -1,0 +1,1 @@
+kubectl run --rm -it --image=mongo mongo-client -- bash
