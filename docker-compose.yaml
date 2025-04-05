@@ -7,8 +7,6 @@ services:
     ports:
       - "80:80"
       - "443:443"
-    environment:
-      - "ACME_DOMAIN=141-11-156-155.gumon.io"
     volumes:
       - rancher-data:/var/lib/rancher
 
